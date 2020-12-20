@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //initalization of variables
+        var choices = ["r", "p", "s"];
+        var win = 0;
+        var lose = 0;
+        var tied = 0;
+
+        for(var i = 1; i<=10; i++){
+            var compChoice = choices[Math.floor(Math.random() * 3)];
+            var userChoice = prompt("Choose r, p, or s!");
+            if(userChoice === compChoice){
+                    alert ("You tied!");
+                    tied++;
+                }
+                else if(userChoice === "r" && compChoice === "s" || userChoice === "s" && compChoice === "p" || userChoice === "p" && compChoice === "r"){
+                    alert("You Won!");
+                    win++;
+                }
+                else if(userChoice === "s" && compChoice === "r" || userChoice === "r" && compChoice === "p" || userChoice === "p" && compChoice === "s"){
+                    alert("You Lose!");
+                    lose++;
+                }
+            }
+            alert("You won "+ win + " matches! You tied " +tied+ " matches.")
+    </script>
+
+</body>
+</html>
